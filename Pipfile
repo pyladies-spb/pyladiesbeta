@@ -8,6 +8,8 @@ django = "*"
 "psycopg2" = "*"
 django-markdownx = "*"
 django-markdownify = "*"
+django-split-settings = "*"
+"psycopg2-binary" = "*"
 
 [dev-packages]
 
