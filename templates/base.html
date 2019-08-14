@@ -36,19 +36,19 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#about">О нас</a>
+                    <a class="nav-link js-scroll-trigger" href="{% url 'base' %}">О нас</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#portfolio">Расписание мероприятий</a>
+                    <a class="nav-link js-scroll-trigger" href="{% url 'schedule' %}">Расписание мероприятий</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#publications">Публикации</a>
+                    <a class="nav-link js-scroll-trigger" href="{% url 'publications' %}">Публикации</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#team">Ресурсы</a>
+                    <a class="nav-link js-scroll-trigger" href="{% url 'resources' %}">Ресурсы</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#contact">Партнеры</a>
+                    <a class="nav-link js-scroll-trigger" href="{% url 'partners' %}">Партнеры</a>
                 </li>
             </ul>
         </div>

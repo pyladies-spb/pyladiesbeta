@@ -10,6 +10,7 @@ django-markdownx = "*"
 django-markdownify = "*"
 django-split-settings = "*"
 "psycopg2-binary" = "*"
+django-ckeditor = "*"
 
 [dev-packages]
 

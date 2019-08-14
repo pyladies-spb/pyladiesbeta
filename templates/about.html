@@ -1,15 +1,8 @@
-{% extends 'flatpages/base.html' %}
+{% extends 'base.html' %}
 {% load markdownify %}
 {% load static %}
 
 {% block content %}
- <section id="flatpage.url">
-      <div class="container">
-              {{ flatpage.content | markdownify}}
-        <div class="row">
-        </div>
-      </div>
- </section>
     <section id="about">
       <div class="container">
         <div class="row">
@@ -38,7 +31,7 @@
               </li>
               <li class="timeline-inverted">
                 <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src=src="{% static 'img/about/2.jpg'%}" alt="">
+                  <img class="rounded-circle img-fluid" src="{% static 'img/about/2.jpg'%}" alt="">
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
@@ -78,13 +71,30 @@
                   </div>
                 </div>
               </li>
-              <li class="timeline-inverted">
+
+              {% for point in story_points %}
+                  {%  with counter=forloop.counter0|cut:"0" %}
+                  {% if counter == 0 %}
+                        <li class="timeline-inverted">
+                    {% else %}
+                       <li>
+                  {% endif %}
+                      {{ counter }}
                 <div class="timeline-image">
-                  <h4>Be Part
-                    <br>Of Our
-                    <br>Story!</h4>
+                  <img class="rounded-circle img-fluid" src="{{ point.image }}" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4>{{ point.date }}</h4>
+                    <h4 class="subheading">{{ point.title }}</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">{{ point.description }}</p>
+                  </div>
                 </div>
               </li>
+                  {% endwith %}
+              {% endfor %}
             </ul>
           </div>
         </div>
