@@ -7,10 +7,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django.contrib.sites',
-    'django.contrib.flatpages',
 
     'pyladies.apps.PyladiesConfig',
 
     'markdownx',
-    'markdownify'
+    'markdownify',
+    'ckeditor',
 ]
