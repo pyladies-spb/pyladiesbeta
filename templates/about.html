@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load markdownify %}
+{% load static %}
+
+{% block content %}
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">PyLadies в Петербурге</h2>
+            <h3 class="section-subheading text-muted">Цели и миссия</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="timeline">
+              <li>
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="{% static 'img/about/1.jpg'%}" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4 class="subheading">Кто мы такие</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">Мы — часть международного проекта PyLadies, который помогает женщинам вливаться в сообщество Python
+                      и становиться его активными участницами.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="{% static 'img/about/2.jpg'%}" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4 class="subheading">Наша миссия</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">Наша миссия — поддерживать, развивать и обучать комьюнити Python-разработчиц с
+                      помощью образовательных мероприятий, конференций, митапов и других ивентов.</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="{% static 'img/about/1.jpg'%}" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4>December 2012</h4>
+                    <h4 class="subheading">Transition to Full Service</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="{% static 'img/about/1.jpg'%}" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4>July 2014</h4>
+                    <h4 class="subheading">Phase Two Expansion</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                  </div>
+                </div>
+              </li>
+
+              {% for point in story_points %}
+                  {%  with counter=forloop.counter0|cut:"0" %}
+                  {% if counter == 0 %}
+                        <li class="timeline-inverted">
+                    {% else %}
+                       <li>
+                  {% endif %}
+                      {{ counter }}
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="{{ point.image }}" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4>{{ point.date }}</h4>
+                    <h4 class="subheading">{{ point.title }}</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">{{ point.description }}</p>
+                  </div>
+                </div>
+              </li>
+                  {% endwith %}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %} 
