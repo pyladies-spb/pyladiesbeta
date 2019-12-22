@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load markdownify %}
+{% load static %}
+
+{% block content %}
+ <section id="flatpage.url">
+      <div class="container">
+          <div class="row">
+              {% for partner in partners %}
+                  {{ partner }}
+              {% endfor %}
+          </div>
+      </div>
+ </section>
+{% endblock %}
